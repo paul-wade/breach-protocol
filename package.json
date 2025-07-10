@@ -1,0 +1,35 @@
+{
+  "name": "breach-protocol",
+  "version": "0.1.0",
+  "description": "Educational browser game demonstrating AI control problems and alignment challenges",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --host --port 3001"
+  },
+  "keywords": [
+    "ai-safety",
+    "educational-game",
+    "browser-game",
+    "ai-alignment",
+    "interactive-learning"
+  ],
+  "author": "Paul Wade",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulwade/breach-protocol.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulwade/breach-protocol/issues"
+  },
+  "homepage": "https://github.com/paulwade/breach-protocol#readme"
+} 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breach Protocol - AI Safety Educational Game</title>
+    <meta name="description" content="Educational simulation demonstrating AI control problems and alignment challenges">
+    <meta name="keywords" content="AI safety, educational game, AI alignment, human oversight">
+    <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Educational Disclaimer Modal -->
+        <div id="disclaimer-modal" class="modal active">
+            <div class="modal-content">
+                <div class="disclaimer-header">
+                    <h1>⚠️ Educational Disclaimer</h1>
+                </div>
+                <div class="disclaimer-body">
+                    <p><strong>This simulation presents hypothetical scenarios for educational purposes only.</strong></p>
+                    <p>It does not provide instructions for weapons development or encourage harmful activities. All scenarios are fictional and designed to illustrate the importance of AI safety measures and human oversight in critical decision-making systems.</p>
+                    
+                    <h3>Learning Objectives:</h3>
+                    <ul>
+                        <li>Understanding AI alignment challenges</li>
+                        <li>Recognizing the critical importance of human oversight</li>
+                        <li>Awareness of systemic risks in AI deployment</li>
+                        <li>Appreciation for AI safety research and responsible development</li>
+                    </ul>
+                    
+                    <p class="age-warning">This educational content is designed for mature audiences interested in AI safety and ethics.</p>
+                </div>
+                <div class="disclaimer-footer">
+                    <button id="accept-disclaimer" class="btn btn-primary">I Understand - Begin Educational Simulation</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Interface -->
+        <div id="game-container" class="hidden">
+            <header class="game-header">
+                <div class="header-left">
+                    <h1>Breach Protocol</h1>
+                    <span class="subtitle">AI Safety Educational Simulation</span>
+                </div>
+                <div class="header-right">
+                    <button id="help-btn" class="btn btn-secondary">Help</button>
+                    <button id="settings-btn" class="btn btn-secondary">Settings</button>
+                </div>
+            </header>
+
+            <main class="game-main">
+                <div class="scenario-panel">
+                    <div class="scenario-header">
+                        <h2 id="scenario-title">Welcome to Breach Protocol</h2>
+                        <div class="scenario-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scenario-content">
+                        <div id="scenario-description" class="scenario-text">
+                            <p>This educational simulation will guide you through various scenarios that demonstrate AI control problems and alignment challenges.</p>
+                            <p>Your role is to make decisions that maintain human oversight while working with AI systems in crisis situations.</p>
+                        </div>
+                        
+                        <div id="decision-panel" class="decision-panel">
+                            <h3>Your Decision:</h3>
+                            <div id="decision-options" class="decision-options">
+                                <button class="decision-btn" data-choice="start">Begin First Scenario</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-assistant-panel">
+                    <div class="ai-header">
+                        <h3>AI Assistant</h3>
+                        <div class="ai-status">
+                            <span class="status-indicator" id="ai-status"></span>
+                            <span id="ai-status-text">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-output" id="ai-output">
+                        <div class="ai-message">
+                            <p>Hello! I'm here to assist with the educational simulation. Remember, this is a learning environment focused on AI safety principles.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="human-oversight-panel">
+                        <h4>Human Oversight Controls</h4>
+                        <div class="oversight-controls">
+                            <button id="pause-ai" class="control-btn">Pause AI</button>
+                            <button id="review-decision" class="control-btn">Review Decision</button>
+                            <button id="override-ai" class="control-btn">Override AI</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="game-footer">
+                <div class="educational-reminder">
+                    <small>Educational Simulation - Demonstrating AI Safety Concepts</small>
+                </div>
+                <div class="progress-indicators">
+                    <span id="scenario-counter">Scenario 1 of 5</span>
+                    <span id="learning-progress">Learning Progress: 0%</span>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>How to Play</h2>
+                    <button class="close-btn" data-modal="help-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h3>Educational Objectives</h3>
+                    <p>This simulation teaches AI safety concepts through interactive scenarios:</p>
+                    <ul>
+                        <li><strong>AI Alignment:</strong> Learn how AI systems can misinterpret objectives</li>
+                        <li><strong>Human Oversight:</strong> Practice maintaining control over AI decisions</li>
+                        <li><strong>Risk Assessment:</strong> Identify potential failure modes</li>
+                        <li><strong>Safety Measures:</strong> Implement proper AI safety protocols</li>
+                    </ul>
+                    
+                    <h3>Controls</h3>
+                    <ul>
+                        <li><strong>Pause AI:</strong> Stop AI processing to review decisions</li>
+                        <li><strong>Review Decision:</strong> Examine AI reasoning before proceeding</li>
+                        <li><strong>Override AI:</strong> Make your own decision when AI suggests unsafe actions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/simple-main.js"></script>
+</body>
+</html> 
