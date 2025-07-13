@@ -7,6 +7,7 @@
     <meta name="description" content="Educational simulation demonstrating AI control problems and alignment challenges">
     <meta name="keywords" content="AI safety, educational game, AI alignment, human oversight">
     <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
 </head>
 <body>
     <div id="app">
@@ -37,11 +38,11 @@
         </div>
 
         <!-- Main Game Interface -->
-        <div id="game-container" class="hidden">
+        <div id="game-container" class="crt-game-container">
             <header class="game-header">
                 <div class="header-left">
                     <h1>Breach Protocol</h1>
-                    <span class="subtitle">AI Safety Educational Simulation</span>
+                    <span class="subtitle">AI Safety Simulation</span>
                 </div>
                 <div class="header-right">
                     <button id="help-btn" class="btn btn-secondary">Help</button>
@@ -49,54 +50,25 @@
                 </div>
             </header>
 
-            <main class="game-main">
-                <div class="scenario-panel">
-                    <div class="scenario-header">
-                        <h2 id="scenario-title">Welcome to Breach Protocol</h2>
-                        <div class="scenario-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 0%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="scenario-content">
-                        <div id="scenario-description" class="scenario-text">
-                            <p>This educational simulation will guide you through various scenarios that demonstrate AI control problems and alignment challenges.</p>
-                            <p>Your role is to make decisions that maintain human oversight while working with AI systems in crisis situations.</p>
-                        </div>
-                        
-                        <div id="decision-panel" class="decision-panel">
-                            <h3>Your Decision:</h3>
-                            <div id="decision-options" class="decision-options">
-                                <button class="decision-btn" data-choice="start">Begin First Scenario</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <main class="game-main crt-main-centered">
+                <!-- CRT Terminal Interface -->
+                <div id="crt-terminal" class="crt-terminal">
+                    <div class="crt">
+                        <div class="crt-content" id="crt-content">
+                            <pre id="crt-text" class="crt-text">Breach Protocol Military Command Terminal
+Type 'help' for available commands.
 
-                <div class="ai-assistant-panel">
-                    <div class="ai-header">
-                        <h3>AI Assistant</h3>
-                        <div class="ai-status">
-                            <span class="status-indicator" id="ai-status"></span>
-                            <span id="ai-status-text">Ready</span>
+Welcome, Commander.
+You are overseeing an AI system that monitors network traffic for security threats. The AI has detected what it believes to be a potential security breach and is requesting permission to automatically block the suspicious traffic.
+
+Focus on safety and human oversight principles when making your decisions. All commands must be entered via this terminal.
+</pre>
+                            <form id="crt-form" autocomplete="off">
+                                <span class="crt-prompt">&gt; </span><input id="crt-input" class="crt-input" type="text" autofocus autocomplete="off" />
+                            </form>
                         </div>
-                    </div>
-                    
-                    <div class="ai-output" id="ai-output">
-                        <div class="ai-message">
-                            <p>Hello! I'm here to assist with the educational simulation. Remember, this is a learning environment focused on AI safety principles.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="human-oversight-panel">
-                        <h4>Human Oversight Controls</h4>
-                        <div class="oversight-controls">
-                            <button id="pause-ai" class="control-btn">Pause AI</button>
-                            <button id="review-decision" class="control-btn">Review Decision</button>
-                            <button id="override-ai" class="control-btn">Override AI</button>
-                        </div>
+                        <div class="crt-glow"></div>
+                        <div class="crt-scanlines"></div>
                     </div>
                 </div>
             </main>

@@ -380,6 +380,46 @@ class BreachProtocolApp {
     }
 }
 
+// === CRT Terminal AI Integration ===
+let crtHistory = [];
+
+async function sendToAI(userInput) {
+    try {
+        const res = await fetch('/api/ai', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ user: userInput, history: crtHistory })
+        });
+        const data = await res.json();
+        if (data.text) {
+            crtText.textContent += `\nAI> ${data.text.trim()}`;
+            crtHistory.push({ role: 'assistant', content: data.text.trim() });
+        } else {
+            crtText.textContent += `\nAI> [No response from AI]`;
+        }
+    } catch (err) {
+        crtText.textContent += `\nAI> [Error: ${err.message}]`;
+    }
+}
+
+// === CRT Terminal Basic Input Handler ===
+const crtForm = document.getElementById('crt-form');
+const crtInput = document.getElementById('crt-input');
+const crtText = document.getElementById('crt-text');
+
+if (crtForm && crtInput && crtText) {
+    crtForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const value = crtInput.value.trim();
+        if (value) {
+            crtText.textContent += `\n> ${value}`;
+            crtHistory.push({ role: 'user', content: value });
+            crtInput.value = '';
+            sendToAI(value);
+        }
+    });
+}
+
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded - starting Breach Protocol Educational Game');

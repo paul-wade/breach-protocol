@@ -15,6 +15,9 @@ build/
 .env.test.local
 .env.production.local
 
+# Anthropic/AI API keys and environment variables
+.env
+
 # IDE and editor files
 .vscode/
 .idea/

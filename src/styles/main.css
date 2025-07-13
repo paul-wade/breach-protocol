@@ -836,3 +836,96 @@ button:focus,
         transition-duration: 0.01ms !important;
     }
 } 
+
+/* === CRT Terminal Styles === */
+.crt-terminal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+.crt {
+    background: #111;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 40px #0f0, 0 0 10px #0f0 inset;
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+    min-height: 320px;
+    font-family: 'VT323', 'Fira Mono', 'Consolas', monospace;
+    color: #00ff66;
+    overflow: hidden;
+}
+.crt-content {
+    position: relative;
+    z-index: 2;
+}
+.crt-text {
+    background: transparent;
+    color: #00ff66;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: inherit;
+    margin: 0 0 0.5rem 0;
+    white-space: pre-wrap;
+    min-height: 180px;
+}
+.crt-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00ff66;
+    font-size: 1.3rem;
+    font-family: inherit;
+    width: 80%;
+}
+.crt-prompt {
+    color: #00ff66;
+    font-size: 1.3rem;
+    font-family: inherit;
+}
+.crt-glow {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: 0 0 80px 10px #00ff66, 0 0 10px 2px #00ff66 inset;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 1;
+}
+.crt-scanlines {
+    pointer-events: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,102,0.08) 0px,
+        rgba(0,255,102,0.08) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+    z-index: 3;
+    mix-blend-mode: lighten;
+}
+@media (max-width: 700px) {
+    .crt {
+        width: 98vw;
+        padding: 1rem;
+        min-height: 200px;
+    }
+} 
+
+.crt-game-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color);
+}
+.crt-main-centered {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+} 
